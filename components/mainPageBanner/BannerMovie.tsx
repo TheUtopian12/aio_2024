@@ -37,7 +37,7 @@ const BannerMovie = () => {
                 </button>
 
                 <button className="flex items-center justify-center rounded-full h-10 w-10 bg-gray-500 hover:bg-orange-600 ">
-                    <span className="text-xl text-white">i</span>
+                    <span className="text-xl text-white flex">i</span>
                 </button>
 
             </div>

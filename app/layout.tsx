@@ -18,10 +18,10 @@ export default function RootLayout({
       <body
         className="bg-black "
       >
-        <header>Header</header>
+        <header className="text-white">Header</header>
         {children}
 
-        <footer>Footer</footer>
+        <footer className="text-white">Footer</footer>
       </body>
     </html>
   );

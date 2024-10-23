@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { getPopularMovies } from "@/lib/api";
-import { CardMovie } from "./CardMovie";
+import { CardMovie } from "../carouselMovie/CardMovie";
 import Link from "next/link";
 
-export default function MovieList() {
+export default function GridMovies() {
     const [movies, setMovies] = useState([]); // Estado inicial vacío
 
     const fetchMovies = async () => {
@@ -27,18 +27,19 @@ export default function MovieList() {
         console.log("Películas actualizadas:", movies);
     }, [movies]); // Se ejecuta cuando cambia el valor de `movies`
     return (
-        <div className="px-12">
+        <div className="p-10">
             <Link
-                href={'/trending-movies'}
-                className="pt-10 px-10 text-center sm:text-left">
-                <h1 className="text-xl text-white">Trending Now ⬇  </h1>
-                <span className="text-white">See all</span>
+                href={'/'}
+                className="flex items-center pt-10 px-10 space-x-4 text-center sm:text-left">
+                <span className="text-white">⬅️</span>
+                <h1 className="text-xl text-white">Home Page  </h1>
+
             </Link>
             <div
-                className="flex whitespace-nowrap 
+                className="grid grid-cols-6 whitespace-nowrap 
                     overflow-x-scroll no-scrollbar gap-9"
             >
-                {movies.slice(0, 10).map(
+                {movies.map(
                     (movie: {
                         id: string;
                         original_title: string;
