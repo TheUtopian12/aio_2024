@@ -1,4 +1,4 @@
-import MovieList from "@/components/allMovies/MovieList";
+import MovieList from "@/components/carouselMovie/MovieList";
 import BannerMovie from "@/components/mainPageBanner/BannerMovie";
 
 

@@ -30,7 +30,7 @@ export default function MovieList() {
             className="flex whitespace-nowrap 
                     overflow-x-scroll no-scrollbar gap-9"
         >
-            {movies.map(
+            {movies.slice(0, 10).map(
                 (movie: {
                     id: string;
                     original_title: string;
