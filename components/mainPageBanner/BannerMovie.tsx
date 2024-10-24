@@ -1,7 +1,31 @@
+"use client"
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./BannerMovieStyles.css"
+import { getPopularMovies } from "@/lib/api";
 const BannerMovie = () => {
+    const [movies, setMovies] = useState([]); // Estado inicial vacío
+
+    const fetchMovies = async () => {
+        try {
+            const popularMovies = await getPopularMovies(); // Llama a la API
+            setMovies(popularMovies); // Actualiza el estado con las películas
+        } catch (error) {
+            console.error("Error al obtener las películas populares:", error);
+        }
+    };
+
+    // Llama a fetchMovies una vez cuando el componente se monta
+    useEffect(() => {
+        fetchMovies();
+    }, []);
+
+    // Nuevo useEffect para observar los cambios en `movies`
+    useEffect(() => {
+        console.log("Películas en banner:", movies);
+    }, [movies]);
+
+
     return (
         <div className="flex relative items-center justify-center">
 
@@ -10,11 +34,17 @@ const BannerMovie = () => {
                 width={9000}
                 height={9000}
                 quality={100}
-                className="w-[100%] h-[500px] "
+                className="w-[100%] h-[500px] opacity-65"
                 alt="Movie image"
                 style={{ objectFit: "cover" }}
+
             />
 
+            <div className="flex justify-center items-center absolute bottom-36 space-x-4 text-white font-extrabold">
+                <span>Action</span>
+                <span>2019</span>
+                <span>Movie</span>
+            </div>
             <div className="flex justify-center items-center absolute bottom-20 space-x-4">
 
                 <button className="flex items-center justify-center rounded-full h-10 w-10 bg-gray-500 hover:bg-orange-600">

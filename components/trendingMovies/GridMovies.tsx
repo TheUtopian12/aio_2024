@@ -22,10 +22,7 @@ export default function GridMovies() {
         fetchMovies();
     }, []);
 
-    // Nuevo useEffect para observar los cambios en `movies`
-    useEffect(() => {
-        console.log("Películas actualizadas:", movies);
-    }, [movies]); // Se ejecuta cuando cambia el valor de `movies`
+    // Se ejecuta cuando cambia el valor de `movies`
     return (
         <div className="p-10">
             <Link
