@@ -43,6 +43,7 @@ export default function GridMovies() {
                         overview: string;
                         vote_average: number;
                         release_date: string;
+                        poster_path: string
                     }) => (
                         <CardMovie key={movie.id} movie={movie} />
                     )

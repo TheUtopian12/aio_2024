@@ -6,17 +6,18 @@ interface Movie {
     original_title: string;
     vote_average: number;
     release_date: string;
+    poster_path: string
 }
 
 export const CardMovie = ({ movie }: { movie: Movie }) => {
     return (
         <div className="w-64 max-h-max my-3 py-3 rounded-2xl bg-black flex flex-col gap-1 items-center ">
             <Image
-                src={'/poster/148558.webp'}
+                src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}
                 width={500}
                 height={200}
                 className='rounded-2xl p-2 h-40'
-                objectFit={'cover'}
+
                 alt='Movie image'
                 style={{ objectFit: "cover" }}
 
