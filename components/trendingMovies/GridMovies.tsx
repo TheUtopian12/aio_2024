@@ -36,8 +36,8 @@ export default function GridMovies() {
 
             </Link>
             <div
-                className="grid grid-cols-6 whitespace-nowrap 
-                    overflow-x-scroll no-scrollbar gap-9"
+                className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 whitespace-nowrap 
+                    overflow-x-scroll no-scrollbar md:gap-9 justify-items-center"
             >
                 {movies.map(
                     (movie: {
