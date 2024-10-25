@@ -1,8 +1,10 @@
 import { formatter } from '@/src/utils.index';
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 
 interface Movie {
+    id: string
     original_title: string;
     vote_average: number;
     release_date: string;
@@ -11,7 +13,9 @@ interface Movie {
 
 export const CardMovie = ({ movie }: { movie: Movie }) => {
     return (
-        <div className="w-64 max-h-max my-3 py-3 rounded-2xl bg-black flex flex-col gap-1 items-center ">
+        <Link
+            href={`/${movie.id}`}
+            className="w-64 max-h-max my-3 py-3 rounded-2xl bg-black flex flex-col gap-1 items-center ">
             <Image
                 src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}
                 width={500}
@@ -35,6 +39,6 @@ export const CardMovie = ({ movie }: { movie: Movie }) => {
 
                 <span className='text-white'> {movie.release_date} </span>
             </div>
-        </div>
+        </Link>
     )
 }
