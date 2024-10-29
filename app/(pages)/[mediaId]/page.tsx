@@ -23,7 +23,6 @@ const Details = ({ params }: { params: { mediaId: string } }) => {
 
         fetchMovieData();
     }, [params.mediaId]);
-    console.log(movieData)
     return (
         movieData ? <BannerComponent poster_path={movieData.poster_path} title={movieData.title} vote_average={movieData.vote_average} release_date={movieData.release_date} overview={movieData.overview} genres={movieData.genres} /> : <h1 className="text-white">Cargando...</h1>
     );

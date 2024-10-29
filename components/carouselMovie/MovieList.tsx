@@ -35,7 +35,7 @@ export default function MovieList() {
                 <span className="text-white">See all</span>
             </Link>
             <div
-                className="flex whitespace-nowrap 
+                className="flex whitespace-nowrap
                     overflow-x-scroll no-scrollbar gap-9"
             >
                 {movies.slice(0, 10).map(
@@ -45,6 +45,8 @@ export default function MovieList() {
                         overview: string;
                         vote_average: number;
                         release_date: string;
+
+                        poster_path: string
                     }) => (
                         <CardMovie key={movie.id} movie={movie} />
                     )

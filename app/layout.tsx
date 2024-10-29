@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import NavBar from '../components/ui/NavBar'
 
 
 
@@ -18,7 +19,9 @@ export default function RootLayout({
       <body
         className="bg-black "
       >
-        <header className="text-white">Header</header>
+        <header className="text-white">
+          <NavBar />
+        </header>
         {children}
 
         <footer className="text-white">Footer</footer>
