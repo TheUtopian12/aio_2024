@@ -3,6 +3,7 @@
 import Image from "next/image";
 import "./BannerMovieStyles.css";
 import { useState } from "react";
+import { Button } from "@nextui-org/react";
 
 interface BannerComponentProps {
     poster_path: string;
@@ -92,8 +93,12 @@ const BannerComponent = ({
             </div>
             {isPlaying && ( // Mostrar el video si isPlaying es verdadero
                 <div className="absolute flex justify-center items-center w-full h-full">
-                    <button onClick={() => setIsPlaying(false)} className="absolute top-4 right-4 text-white border-2 py-2 px-4
-                    hover:text-red-500 hover:border-red-500 ">X</button> {/* Botón para cerrar el video */}
+
+                    <Button
+                        size="md"
+                        variant="bordered"
+                        onClick={() => setIsPlaying(false)}
+                        color="danger" className="absolute top-4 right-4 font-extrabold">X</Button>
 
                     <iframe
                         width="80%"

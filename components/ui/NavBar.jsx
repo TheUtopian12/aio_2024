@@ -1,26 +1,43 @@
-import Link from 'next/link';
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
+
 
 const NavBar = () => {
     return (
-        <nav className='w-full h-10 flex items-center justify-center '>
-            <ul className='flex justify-center items-center space-x-10'>
-                <li className=''>
-                    <Link href="/">
-                        <h1>Inicio</h1>
+        <Navbar>
+            <NavbarBrand>
+                <p className="font-bold text-inherit">ACME</p>
+            </NavbarBrand>
+
+            <NavbarContent className="hidden sm:flex gap-4" justify="center">
+                <NavbarItem>
+                    <Link color="danger" href="/">
+                        Features
                     </Link>
-                </li>
-                <li>
-                    <Link href="/trending-movies">
-                        <h1>Trending</h1>
+                </NavbarItem>
+                <NavbarItem isActive>
+                    <Link href="#" aria-current="page" color="secondary">
+                        Customers
                     </Link>
-                </li>
-                <li>
-                    <Link href="/profile">
-                        <h1>Profile</h1>
+                </NavbarItem>
+                <NavbarItem>
+                    <Link color="foreground" href="#">
+                        Integrations
                     </Link>
-                </li>
-            </ul>
-        </nav>
+                </NavbarItem>
+            </NavbarContent>
+
+            <NavbarContent as="div" justify="end">
+                <Avatar
+                    isBordered
+                    as="button"
+                    className="transition-transform"
+                    color="secondary"
+                    name="Jason Hughes"
+                    size="sm"
+                    src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                />
+            </NavbarContent>
+        </Navbar>
     );
 };
 
