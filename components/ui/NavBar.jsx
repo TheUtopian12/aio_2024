@@ -1,7 +1,12 @@
+"use client"
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
+import { usePathname } from "next/navigation";
 
 
 const NavBar = () => {
+    const path = usePathname()
+    console.log(path)
+
     return (
         <Navbar>
             <NavbarBrand>
@@ -9,19 +14,19 @@ const NavBar = () => {
             </NavbarBrand>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                <NavbarItem>
-                    <Link color="danger" href="/">
-                        Features
+                <NavbarItem >
+                    <Link className={`text-white hover:text-red-500 ${path == '/' ? "text-blue-500" : ""}`} href="/">
+                        Inicio
                     </Link>
                 </NavbarItem>
-                <NavbarItem isActive>
-                    <Link href="#" aria-current="page" color="secondary">
-                        Customers
+                <NavbarItem >
+                    <Link href="/trending-movies" className="text-white hover:text-red-500">
+                        Movies
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link color="foreground" href="#">
-                        Integrations
+                    <Link href="#" className="text-white hover:text-red-500">
+                        Tv Series
                     </Link>
                 </NavbarItem>
             </NavbarContent>

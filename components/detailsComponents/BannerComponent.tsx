@@ -39,9 +39,9 @@ const BannerComponent = ({
                 height={9000}
                 quality={100}
                 priority
-                className="max-w-full h-[800px] opacity-40"
+                className="max-w-full h-screen opacity-40"
                 alt="Imagen de la película"
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "contain" }}
             />
 
             <div className="text-white absolute w-[80%] sm:w-[70%] md:w-[50%]">
