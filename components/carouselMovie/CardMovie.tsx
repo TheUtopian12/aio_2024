@@ -1,5 +1,5 @@
 import { formatter } from '@/src/utils.index';
-import Image from 'next/image'
+import { Image } from '@nextui-org/react';
 import Link from 'next/link';
 import React from 'react'
 
@@ -19,9 +19,9 @@ export const CardMovie = ({ movie }: { movie: Movie }) => {
             <Image
                 src={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}
                 width={500}
-                height={200}
+                height={150}
                 className='rounded-2xl p-2 h-40'
-
+                isZoomed
                 alt='Movie image'
                 style={{ objectFit: "cover" }}
 

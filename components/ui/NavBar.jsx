@@ -1,5 +1,5 @@
 "use client"
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, Image } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
 
 
@@ -9,18 +9,25 @@ const NavBar = () => {
 
     return (
         <Navbar>
-            <NavbarBrand>
-                <p className="font-bold text-inherit">ACME</p>
-            </NavbarBrand>
+            <NavbarContent>
+                <NavbarItem><Link href="/">
+                    <Image
+                        height={50}
+                        src={'/aio-logo_v2.svg'}
+
+                    />
+                </Link></NavbarItem>
+
+            </NavbarContent>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
                 <NavbarItem >
-                    <Link className={`text-white hover:text-red-500 ${path == '/' ? "text-blue-500" : ""}`} href="/">
+                    <Link className={`text-white hover:text-red-500 ${path == '/' ? "text-[#f26457]" : ""}`} href="/">
                         Inicio
                     </Link>
                 </NavbarItem>
                 <NavbarItem >
-                    <Link href="/trending-movies" className="text-white hover:text-red-500">
+                    <Link href="/trending-movies" className={`text-white hover:text-red-500 ${path == '/trending-movies' ? "text-[#f26457]" : ""}`} >
                         Movies
                     </Link>
                 </NavbarItem>
