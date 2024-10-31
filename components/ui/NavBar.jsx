@@ -39,15 +39,19 @@ const NavBar = () => {
             </NavbarContent>
 
             <NavbarContent as="div" justify="end">
-                <Avatar
-                    isBordered
-                    as="button"
-                    className="transition-transform"
-                    color="secondary"
-                    name="Jason Hughes"
-                    size="sm"
-                    src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-                />
+                <Link href="/profile" className="text-white hover:text-red-500">
+
+                    <Avatar
+
+                        isBordered
+                        as="button"
+                        className="transition-transform"
+                        color="secondary"
+                        name="Jason Hughes"
+                        size="sm"
+                        src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+                    />
+                </Link>
             </NavbarContent>
         </Navbar>
     );
