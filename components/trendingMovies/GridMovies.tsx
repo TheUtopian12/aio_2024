@@ -31,13 +31,13 @@ export default function GridMovies() {
                 href={'/'}
                 className="flex items-center pt-10 px-10 space-x-4 text-center sm:text-left">
                 <Button color="danger" variant="ghost"
-        
-        > <FaArrowLeft /> </Button>
+
+                > <FaArrowLeft /> </Button>
 
             </Link>
             <div
-                className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 whitespace-nowrap 
-                    overflow-x-scroll no-scrollbar md:gap-9 justify-items-center"
+                className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 whitespace-nowrap 
+                    overflow-x-scroll no-scrollbar md:gap-9 lg:gap-10 justify-items-center"
             >
                 {movies.map(
                     (movie: {

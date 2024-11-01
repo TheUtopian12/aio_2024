@@ -28,9 +28,9 @@ export const CardMovie = ({ movie }: { movie: Movie }) => {
             />
 
 
-            <div className='w-64 text-left px-5'>
+            <div className='w-64 text-left px-2'>
 
-                <span className='text-lg text-white'>{movie.original_title}</span>
+                <span className='text-md text-white'>{movie.original_title}</span>
             </div>
             <div className='w-full flex items-center space-x-10'>
                 <span className=' text-white '>🌟 {
