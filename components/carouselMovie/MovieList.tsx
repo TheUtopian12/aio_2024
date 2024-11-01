@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getPopularMovies } from "@/lib/api";
 import { CardMovie } from "./CardMovie";
 import Link from "next/link";
+import { FaArrowDown } from "react-icons/fa6";
 
 export default function MovieList() {
     const [movies, setMovies] = useState([]); // Estado inicial vacío
@@ -31,7 +32,7 @@ export default function MovieList() {
             <Link
                 href={'/trending-movies'}
                 className="pt-10 px-10 text-center sm:text-left">
-                <h1 className="text-xl text-white">Trending Now ⬇  </h1>
+                <h1 className="text-xl text-white flex items-center gap-2">Trending Now <span><FaArrowDown /></span> </h1>
                 <span className="text-white">See all</span>
             </Link>
             <div

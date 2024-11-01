@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { getPopularMovies } from "@/lib/api";
 import { CardMovie } from "../carouselMovie/CardMovie";
 import Link from "next/link";
+import { Button } from "@nextui-org/react";
+import { FaArrowLeft } from "react-icons/fa6";
 
 export default function GridMovies() {
     const [movies, setMovies] = useState([]); // Estado inicial vacío
@@ -28,8 +30,9 @@ export default function GridMovies() {
             <Link
                 href={'/'}
                 className="flex items-center pt-10 px-10 space-x-4 text-center sm:text-left">
-                <span className="text-white">⬅️</span>
-                <h1 className="text-xl text-white">Home Page  </h1>
+                <Button color="danger" variant="ghost"
+        
+        > <FaArrowLeft /> </Button>
 
             </Link>
             <div
