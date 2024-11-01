@@ -11,10 +11,7 @@ interface BannerComponentProps {
     vote_average: number;
     release_date: string;
     overview: string;
-    genres: Genres[];
-}
-interface Genres {
-    name: string
+    genres: string[];
 }
 
 const BannerComponent = ({
@@ -56,7 +53,7 @@ const BannerComponent = ({
                     <span className="text-white text-md text-justify">{overview}</span>
                 </div>
                 <div className="text-center py-4 text-md text-white">
-                    {release_date} / {genres.map((genre) => genre.name).join(", ")}{" "}
+                    {release_date} / {genres.join(", ")}{" "}
                 </div>
 
                 <div className="flex justify-center space-x-2">
