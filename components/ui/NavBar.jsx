@@ -1,5 +1,5 @@
 "use client"
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu, Avatar, Image } from "@nextui-org/react";
+import { Navbar, NavbarContent, NavbarItem, Link, Avatar, Image } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
 
 
@@ -14,7 +14,7 @@ const NavBar = () => {
                     <Image
                         height={50}
                         src={'/aio-logo_v2.svg'}
-
+                        alt="Logo image"
                     />
                 </Link></NavbarItem>
 
